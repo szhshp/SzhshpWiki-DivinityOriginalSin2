@@ -1,4 +1,4 @@
-export const crafting = [
+export const recipes = [
   {
     "Result 1": "Armour of the Eternals",
     Amt1: "",

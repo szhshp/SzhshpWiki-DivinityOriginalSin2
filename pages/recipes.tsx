@@ -7,7 +7,7 @@ import { Grid } from "@mui/material";
 import { Content } from "components/content";
 import { DataTable } from "components/dataTable";
 import { SITE } from "config";
-import { crafting } from "data";
+import { recipes } from "data";
 
 const columns: GridColDef[] = [
   { field: "Result 1", headerName: "名称", width: 250 },
@@ -30,7 +30,7 @@ const Home: NextPage = () => (
     <Grid container item xs={12}>
       <DataTable
         columns={columns}
-        rows={crafting.map((e, i) => ({
+        rows={recipes.map((e, i) => ({
           ...e,
           id: i,
         }))}

@@ -7,9 +7,9 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
-import { SITE } from "config";
 import HomeIcon from "@mui/icons-material/Home";
 import { SLink } from "components/general/SLink";
+import { ROUTES } from "config";
 
 const Topbar = (): ReactElement => (
   <Box sx={{ flexGrow: 1 }}>
@@ -27,13 +27,7 @@ const Topbar = (): ReactElement => (
           </SLink>
         </IconButton>
 
-        {[
-          { href: "/crafting", label: "Crafting" },
-          {
-            href: "/ingredient",
-            label: "Ingredients",
-          },
-        ].map((item) => (
+        {ROUTES.map((item) => (
           <Typography key={item.href} variant="h6" noWrap component="div">
             <SLink href={item.href} sx={{ color: "white" }}>
               <Box px={2}>{item.label}</Box>

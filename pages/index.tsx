@@ -12,7 +12,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Content } from "components/content";
-import { SITE } from "config";
+import { SITE, ROUTES } from "config";
 import { SLink } from "components/general";
 
 const About: NextPage = () => (
@@ -23,14 +23,37 @@ const About: NextPage = () => (
     <Container maxWidth="xl">
       <Grid item xs={12}>
         <Box m={3}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h6" gutterBottom>
             {SITE.NAME}
           </Typography>
           <Box marginTop="1rem">官方攻略加载太慢所以我自个儿写了个方便搜索</Box>
-          <Box marginTop="1rem">数据基于官方, 翻译将会组件补充</Box>
+          <Box marginTop="1rem">
+            数据基于官方, 翻译将会逐渐补充, 转码和翻译过程可能有些许错误, 可以通过以下方式联系我修复
+          </Box>
         </Box>
         <Box m={3}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h6" gutterBottom>
+            目录
+          </Typography>
+
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            {ROUTES.map((item) => (
+              <ListItem
+                key={item.href}
+                disableGutters
+                secondaryAction={
+                  <SLink key={item.href} href={item.href}>
+                    <Box px={2}>{item.label}</Box>
+                  </SLink>
+                }
+              />
+            ))}
+          </List>
+        </Box>
+        <Box m={3}>
+          <Typography variant="h6" gutterBottom>
             Contacts
           </Typography>
           <List

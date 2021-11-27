@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
-import { Grid, Box, IconButton, Tooltip } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { Content } from "components/content";
 import { SITE } from "config";
 import { ingredients } from "data";
