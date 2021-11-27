@@ -29,9 +29,7 @@ const About: NextPage = () => (
             About
           </Typography>
           <Box marginTop="1rem">官方攻略加载太慢所以我自个儿写了个方便搜索</Box>
-          <Box marginTop="1rem">
-            数据基于官方, 翻译将会逐渐手动补充
-          </Box>
+          <Box marginTop="1rem">数据基于官方, 翻译将会逐渐手动补充</Box>
         </Box>
         <Box m={3}>
           <Typography variant="h4" gutterBottom>

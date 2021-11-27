@@ -1,8 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import {
-  primaryColor,
-  secondaryColor,
-} from "styles/colors";
+import { primaryColor, secondaryColor } from "styles/colors";
 
 export const sidebarResponsiveBreakPoint = "md";
 
@@ -46,7 +43,6 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-
         /* ----------------- Font Styles Start ----------------------- */
         "*": {
           ...globalFontStyle,
