@@ -28,7 +28,15 @@ const About: NextPage = () => (
           </Typography>
           <Box marginTop="1rem">官方攻略加载太慢所以我自个儿写了个方便搜索</Box>
           <Box marginTop="1rem">
-            数据基于官方, 翻译将会逐渐补充, 转码和翻译过程可能有些许错误, 可以通过以下方式联系我修复
+            适用于
+            <b>神界: 原罪2 (Divinity: Original Sin 2) </b> 和
+            <b>
+              神界: 原罪2 决定版(Divinity: Original Sin 2 Definitive Edition)
+            </b>
+          </Box>
+          <Box marginTop="1rem">
+            数据基于官方, 翻译将会逐渐补充, 转码和翻译可能会导致部分数据不准确
+            可以通过以下方式联系我修复
           </Box>
         </Box>
         <Box m={3}>
