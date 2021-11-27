@@ -27,25 +27,19 @@ const Topbar = (): ReactElement => (
           </SLink>
         </IconButton>
 
-        <Typography variant="h6" noWrap component="div">
-          <SLink href="/" sx={{ color: "white" }}>
-            {SITE.NAME}
-          </SLink>
-        </Typography>
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <SLink href="/about" sx={{ color: "white" }}>
-            About
-          </SLink>
-        </Typography>
+        {[
+          { href: "/crafting", label: "Crafting" },
+          {
+            href: "/ingredient",
+            label: "Ingredients",
+          },
+        ].map((item) => (
+          <Typography key={item.href} variant="h6" noWrap component="div">
+            <SLink href={item.href} sx={{ color: "white" }}>
+              <Box px={2}>{item.label}</Box>
+            </SLink>
+          </Typography>
+        ))}
       </Toolbar>
     </AppBar>
   </Box>

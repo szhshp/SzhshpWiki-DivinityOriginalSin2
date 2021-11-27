@@ -1,49 +1,66 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
-import { Grid, Box, IconButton, Tooltip } from "@mui/material";
+import {
+  Grid,
+  Container,
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import { Content } from "components/content";
 import { SITE } from "config";
-import { crafting } from "data";
+import { SLink } from "components/general";
 
-const CraftingRecipesTable = () => {
-  const columns: GridColDef[] = [
-    { field: "Result 1", headerName: "名称", width: 250 },
-    { field: "Category", headerName: "类别", width: 150 },
-    { field: "Effect 1", headerName: "效果", width: 250 },
-    ...Array(5)
-      .fill(undefined)
-      .map((e, i) => ({
-        field: `Ingredient ${i + 1}`,
-        headerName: `素材 ${i + 1}`,
-        width: 250,
-      })),
-  ];
-
-  return (
-    <Box minHeight="100vh" width="100%">
-      <DataGrid
-        rows={crafting.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
-        columns={columns}
-      />
-    </Box>
-  );
-};
-
-const Home: NextPage = () => (
+const About: NextPage = () => (
   <Content>
     <Head>
       <title>{SITE.NAME}</title>
     </Head>
-    <Grid container item xs={12}>
-      <CraftingRecipesTable />
-    </Grid>
+    <Container maxWidth="xl">
+      <Grid item xs={12}>
+        <Box m={3}>
+          <Typography variant="h4" gutterBottom>
+            {SITE.NAME}
+          </Typography>
+          <Box marginTop="1rem">官方攻略加载太慢所以我自个儿写了个方便搜索</Box>
+          <Box marginTop="1rem">数据基于官方, 翻译将会组件补充</Box>
+        </Box>
+        <Box m={3}>
+          <Typography variant="h4" gutterBottom>
+            Contacts
+          </Typography>
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            {[
+              {
+                media: "Github",
+                link: "https://github.com/szhshp",
+                title: "@szhshp",
+              },
+              {
+                media: "Blog",
+                link: "https://szhshp.org",
+                title: "https://szhshp.org",
+              },
+            ].map(({ media, link, title }) => (
+              <ListItem
+                key={title}
+                disableGutters
+                secondaryAction={<SLink href={link}>{title}</SLink>}
+              >
+                <ListItemText primary={media} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Grid>
+    </Container>
   </Content>
 );
 
-export default Home;
+export default About;
