@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '#######################################'
+echo '# Pre Commit Check: Lint Staged'
+npx lint-staged
+echo '# Finished'
+echo '#######################################'
