@@ -24,10 +24,7 @@ const Home: NextPage = () => (
     <Grid container item xs={12}>
       <DataTable
         columns={columns}
-        rows={ingredients.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
+        rows={ingredients}
         quickFilterField="Ing Cat"
       />
     </Grid>

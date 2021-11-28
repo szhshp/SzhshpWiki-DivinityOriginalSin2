@@ -26,10 +26,7 @@ const SurfacesClouds: NextPage = () => (
     <Grid container item xs={12}>
       <DataTable
         columns={columns}
-        rows={surfacesClouds.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
+        rows={surfacesClouds}
         quickFilterField="S/C"
       />
     </Grid>

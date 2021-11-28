@@ -36,10 +36,7 @@ const Home: NextPage = () => (
           },
           ...columns,
         ]}
-        rows={nonSourceAbilities.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
+        rows={nonSourceAbilities}
         hideFooterPagination
       />
     </Grid>
@@ -58,10 +55,7 @@ const Home: NextPage = () => (
           },
           ...columns,
         ]}
-        rows={sourceAbilities.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
+        rows={sourceAbilities}
         hideFooterPagination
       />
     </Grid>

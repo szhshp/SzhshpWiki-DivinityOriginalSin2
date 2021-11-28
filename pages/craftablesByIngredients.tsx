@@ -31,13 +31,7 @@ const Home: NextPage = () => (
       <title>{SITE.NAME}</title>
     </Head>
     <Grid container item xs={12}>
-      <DataTable
-        columns={columns}
-        rows={craftablesByIngredients.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
-      />
+      <DataTable columns={columns} rows={craftablesByIngredients} />
     </Grid>
   </Content>
 );

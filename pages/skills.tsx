@@ -29,14 +29,7 @@ const Home: NextPage = () => (
       <title>{SITE.NAME}</title>
     </Head>
     <Grid container item xs={12}>
-      <DataTable
-        columns={columns}
-        rows={skills.map((e, i) => ({
-          ...e,
-          id: i,
-        }))}
-        quickFilterField="Ability 1"
-      />
+      <DataTable columns={columns} rows={skills} quickFilterField="Ability 1" />
     </Grid>
   </Content>
 );

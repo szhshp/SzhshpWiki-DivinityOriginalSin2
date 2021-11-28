@@ -46,7 +46,6 @@ const Status: NextPage = () => (
           return {
             ...e,
             Resist: resist,
-            id: i,
           };
         })}
         quickFilterField="Resist"
