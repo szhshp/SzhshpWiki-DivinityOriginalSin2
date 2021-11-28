@@ -3,8 +3,8 @@
 import React from "react";
 import { GridRowData, GridColumns, DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import { FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
+import { STextField } from "components/general";
 
 /* props includes rows and cols */
 export const DataTable = ({
@@ -33,7 +33,7 @@ export const DataTable = ({
             }}
             noValidate
           >
-            <TextField
+            <STextField
               label="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
