@@ -10,10 +10,23 @@ import {
   List,
   ListItem,
   ListItemText,
+  Paper,
+  styled,
 } from "@mui/material";
 import { Content } from "components/content";
 import { SITE, ROUTES } from "config";
 import { SLink } from "components/general";
+
+const Item = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(1),
+  textAlign: "center",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: theme.spacing(10),
+  color: theme.palette.primary.main,
+  fontSize: theme.typography.h5.fontSize,
+}));
 
 const About: NextPage = () => (
   <Content>
@@ -26,7 +39,9 @@ const About: NextPage = () => (
           <Typography variant="h6" gutterBottom>
             {SITE.NAME}
           </Typography>
-          <Box marginTop="1rem">官方攻略加载太慢所以我自个儿写了个方便搜索</Box>
+          <Box marginTop="1rem">
+            官方攻略加载太慢所以我自个儿写了个网站方便搜索
+          </Box>
           <Box marginTop="1rem">
             适用于
             <b>神界: 原罪2 (Divinity: Original Sin 2) </b> 和
@@ -44,21 +59,21 @@ const About: NextPage = () => (
             目录
           </Typography>
 
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             {ROUTES.map((item) => (
-              <ListItem
-                key={item.href}
-                disableGutters
-                secondaryAction={
-                  <SLink key={item.href} href={item.href}>
+              <Grid item xs={4} key={item.href}>
+                <SLink key={item.href} href={item.href}>
+                  <Item elevation={3}>
                     <Box px={2}>{item.label}</Box>
-                  </SLink>
-                }
-              />
+                  </Item>
+                </SLink>
+              </Grid>
             ))}
-          </List>
+          </Grid>
         </Box>
         <Box m={3}>
           <Typography variant="h6" gutterBottom>
