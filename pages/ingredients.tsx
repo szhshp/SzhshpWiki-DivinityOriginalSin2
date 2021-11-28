@@ -16,7 +16,6 @@ const columns: GridColDef[] = [
   { field: "Notes", headerName: "描述", width: 250 },
 ];
 
-
 const Home: NextPage = () => (
   <Content>
     <Head>
@@ -29,7 +28,8 @@ const Home: NextPage = () => (
           ...e,
           id: i,
         }))}
-      />{" "}
+        quickFilterField="Ing Cat"
+      />
     </Grid>
   </Content>
 );
