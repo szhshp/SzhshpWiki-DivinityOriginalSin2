@@ -23,16 +23,6 @@ export const globalLinkStyle = {
   color: primaryColor,
 };
 
-const overrideMusicPlayerSVGColor = {
-  color: "white",
-  "& svg": {
-    color: "white!important",
-    "&:hover": {
-      color: secondaryColor,
-    },
-  },
-};
-
 const defaultTheme = createTheme();
 
 /**
@@ -62,19 +52,12 @@ const theme = createTheme({
       },
     },
   },
-  typography: {
-    ...globalFontStyle,
-    caption: {
-      fontSize: "0.8rem",
-      color: "#9a9a9a",
-    },
-  },
   palette: {
     primary: {
       main: primaryColor,
     },
     secondary: {
-      main: "#b78b26",
+      main: secondaryColor,
     },
     error: {
       main: "#f04a3a",

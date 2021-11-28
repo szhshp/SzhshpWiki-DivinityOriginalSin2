@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
@@ -7,8 +7,6 @@ import createCache from "@emotion/cache";
 import { CacheProvider, EmotionCache, ThemeProvider } from "@emotion/react";
 import { Analytics } from "components/analytic";
 import theme from "styles/theme";
-import axios from "axios";
-import { DEBUG } from "config";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
