@@ -28,9 +28,11 @@ export const DataTable = ({
   const [category, setCategory] = React.useState("");
   const categroies = Array.from(
     new Set(
-      rows.map((e) => e[quickFilterField]
+      rows.map((e) =>
+        e[quickFilterField]
           ? e[quickFilterField]
-          : "[ERROR in quickFilterField]")
+          : "[ERROR in quickFilterField]"
+      )
     )
   );
   const [pageSize, setPageSize] = React.useState<number>(20);
@@ -114,6 +116,7 @@ export const DataTable = ({
               let found = false;
               columns.forEach(({ field }) => {
                 if (
+                  row[field] &&
                   row[field]
                     .toString()
                     .toLocaleLowerCase()

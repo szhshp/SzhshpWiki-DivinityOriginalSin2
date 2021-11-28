@@ -10,4 +10,5 @@ export const ROUTES = [
   { href: "/2AbilitySkills", label: "合成技能" },
   { href: "/surfacesClouds", label: "地表/云雾" },
   { href: "/status", label: "状态" },
+  { href: "/craftingOverhual", label: "MOD-Crafting Overhaul" },
 ];

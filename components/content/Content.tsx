@@ -20,7 +20,7 @@ const ContentContainer = (): ReactElement => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Drawer anchor="left" open={drawOpen} onClose={() => setDrawOpen(false)}>
-        <List sx={{ width: "240px" }}>
+        <List sx={{ width: "320px" }}>
           {ROUTES.map((item) => (
             <ListItem button key={item.href}>
               <ListItemButton role={undefined} dense>
