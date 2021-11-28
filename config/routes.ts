@@ -9,4 +9,5 @@ export const ROUTES = [
   { href: "/skills", label: "技能" },
   { href: "/2AbilitySkills", label: "双系技能" },
   { href: "/surfacesClouds", label: "地表/云雾" },
+  { href: "/status", label: "状态" },
 ];
