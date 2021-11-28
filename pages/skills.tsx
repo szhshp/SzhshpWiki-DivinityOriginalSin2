@@ -10,15 +10,15 @@ import { SITE } from "config";
 import { skills } from "data";
 
 const columns: GridColDef[] = [
-  { field: "Skill", headerName: "技能", width: 250 },
+  { field: "Skill", headerName: "技能", width: 200 },
   { field: "Ability 1", headerName: "类别 1", width: 150 },
   { field: "Ability 2", headerName: "类别 2", width: 150 },
-  { field: "Lvl", headerName: "等级", width: 150 },
-  { field: "AP", headerName: "消耗 AP", width: 150 },
-  { field: "Source", headerName: "消耗源力", width: 150 },
-  { field: "CD", headerName: "冷却时间", width: 150 },
-  { field: "Rng", headerName: "距离", width: 150 },
-  { field: "Rad", headerName: "范围", width: 150 },
+  { field: "Lvl", headerName: "等级", width: 100 },
+  { field: "AP", headerName: "AP", width: 100 },
+  { field: "Source", headerName: "源力", width: 100 },
+  { field: "CD", headerName: "CD", width: 100 },
+  { field: "Rng", headerName: "距离", width: 100 },
+  { field: "Rad", headerName: "范围", width: 100 },
   { field: "Description", headerName: "描述", width: 350 },
   /* 状态描述 */
 ];
@@ -35,6 +35,7 @@ const Home: NextPage = () => (
           ...e,
           id: i,
         }))}
+        quickFilterField="Ability 1"
       />
     </Grid>
   </Content>

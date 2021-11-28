@@ -34,6 +34,7 @@ const Home: NextPage = () => (
           ...e,
           id: i,
         }))}
+        quickFilterField="Category"
       />
     </Grid>
   </Content>
