@@ -26,7 +26,13 @@ export const DataTable = ({
   /* use state for search */
   const [search, setSearch] = React.useState("");
   const [category, setCategory] = React.useState("");
-  const categroies = Array.from(new Set(rows.map((e) => e[quickFilterField])));
+  const categroies = Array.from(
+    new Set(
+      rows.map((e) => e[quickFilterField]
+          ? e[quickFilterField]
+          : "[ERROR in quickFilterField]")
+    )
+  );
   const [pageSize, setPageSize] = React.useState<number>(20);
 
   return (

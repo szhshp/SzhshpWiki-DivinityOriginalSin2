@@ -9,12 +9,13 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Typography,
 } from "@mui/material";
 import { SLink } from "components/general/SLink";
-import { ROUTES } from "config";
+import { ROUTES, SITE } from "config";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
-const Topbar = (): ReactElement => {
+const ContentContainer = (): ReactElement => {
   const [drawOpen, setDrawOpen] = useState(true);
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -45,6 +46,11 @@ const Topbar = (): ReactElement => {
           >
             <MenuIcon />
           </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            <SLink href="/" sx={{ color: "white" }}>
+              {SITE.NAME}
+            </SLink>
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>
@@ -57,9 +63,9 @@ export const Content = ({
   children: JSX.Element | JSX.Element[];
 }): JSX.Element => (
   <Grid container>
-    <Topbar />
+    <ContentContainer />
     <Grid item xs={12}>
-      {children}
+      <Box m={2}>{children}</Box>
     </Grid>
   </Grid>
 );
