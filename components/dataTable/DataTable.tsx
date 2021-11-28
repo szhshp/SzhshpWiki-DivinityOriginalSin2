@@ -3,8 +3,13 @@
 import React from "react";
 import { GridRowData, GridColumns, DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
-import { FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
-import { STextField } from "components/general";
+import {
+  FormControlLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  TextField,
+} from "@mui/material";
 
 /* props includes rows and cols */
 export const DataTable = ({
@@ -20,6 +25,7 @@ export const DataTable = ({
   const [search, setSearch] = React.useState("");
   const [category, setCategory] = React.useState("");
   const categroies = Array.from(new Set(rows.map((e) => e[quickFilterField])));
+  const [pageSize, setPageSize] = React.useState<number>(20);
 
   return (
     <>
@@ -33,7 +39,12 @@ export const DataTable = ({
             }}
             noValidate
           >
-            <STextField
+            <TextField
+              sx={(theme)=>({
+                "& .MuiInputBase-input ": {
+                  padding: theme.spacing(1),
+                },
+              })}
               label="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -73,8 +84,9 @@ export const DataTable = ({
           </Grid>
         )}
       </Grid>
-      <Box minHeight="100vh" width="100%">
+      <Box width="100%">
         <DataGrid
+          autoHeight
           density="compact"
           disableColumnFilter
           disableColumnMenu
@@ -106,6 +118,10 @@ export const DataTable = ({
               return found;
             })}
           columns={columns}
+          pageSize={pageSize}
+          onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+          rowsPerPageOptions={[5, 10, 20]}
+          pagination
         />
       </Box>
     </>

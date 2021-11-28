@@ -6,4 +6,5 @@ export const ROUTES = [
     label: "材料",
   },
   { href: "/skills", label: "技能" },
+  { href: "/2AbilitySkills", label: "双系技能" },
 ];
