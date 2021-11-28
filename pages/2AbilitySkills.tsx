@@ -10,7 +10,6 @@ import { SITE } from "config";
 import { nonSourceAbilities, sourceAbilities } from "data";
 
 const columns: GridColDef[] = [
-  { field: "Source", headerName: "技能", width: 200 },
   { field: "Aerotheurge", headerName: "Aerotheurge", width: 200 },
   { field: "Geomancer", headerName: "Geomancer", width: 200 },
   { field: "Hydrosophist", headerName: "Hydrosophist", width: 200 },
@@ -23,33 +22,39 @@ const Home: NextPage = () => (
       <title>{SITE.NAME}</title>
     </Head>
     <Grid container item xs={12}>
-      <Box p={2}>
+      <Box py={2}>
         <Typography variant="h5" color="initial">
           普通技能
         </Typography>
       </Box>
       <DataTable
-        minHeight="50vh"
-        columns={columns}
-        rows={sourceAbilities.map((e, i) => ({
+        columns={[
+          { field: "Non-Source", headerName: "技能", width: 200 },
+          ...columns,
+        ]}
+        rows={nonSourceAbilities.map((e, i) => ({
           ...e,
           id: i,
         }))}
+        hideFooterPagination
       />
     </Grid>
     <Grid container item xs={12}>
-      <Box p={2}>
+      <Box py={2}>
         <Typography variant="h5" color="initial">
           源力技能
         </Typography>
       </Box>
       <DataTable
-        minHeight="50vh"
-        columns={columns}
+        columns={[
+          { field: "Source", headerName: "技能", width: 200 },
+          ...columns,
+        ]}
         rows={sourceAbilities.map((e, i) => ({
           ...e,
           id: i,
         }))}
+        hideFooterPagination
       />
     </Grid>
   </Content>

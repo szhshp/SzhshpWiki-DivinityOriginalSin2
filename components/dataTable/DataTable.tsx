@@ -16,10 +16,12 @@ export const DataTable = ({
   rows,
   columns,
   quickFilterField,
+  hideFooterPagination,
 }: {
   rows: GridRowData[];
   columns: GridColumns;
   quickFilterField?: string;
+  hideFooterPagination?: boolean;
 }): JSX.Element => {
   /* use state for search */
   const [search, setSearch] = React.useState("");
@@ -35,12 +37,12 @@ export const DataTable = ({
             component="form"
             pt={2}
             sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
+              "& > :not(style)": { my: 1, width: "25ch" },
             }}
             noValidate
           >
             <TextField
-              sx={(theme)=>({
+              sx={(theme) => ({
                 "& .MuiInputBase-input ": {
                   padding: theme.spacing(1),
                 },
@@ -121,7 +123,7 @@ export const DataTable = ({
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           rowsPerPageOptions={[5, 10, 20]}
-          pagination
+          hideFooterPagination={hideFooterPagination || false}
         />
       </Box>
     </>
