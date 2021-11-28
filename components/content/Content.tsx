@@ -22,13 +22,13 @@ import {
 
 import { SLink } from "components/general/SLink";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
 }>(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  padding: theme.spacing(1),
   transition: theme.transitions.create("margin", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -78,7 +78,6 @@ export const Content = ({
 }: {
   children: JSX.Element | JSX.Element[];
 }) => {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -132,7 +131,7 @@ export const Content = ({
             <ListItem button key={item.href}>
               <ListItemButton role={undefined} dense>
                 <SLink href={item.href}>
-                  <Box px={2} py={1}>
+                  <Box>
                     {item.label}
                   </Box>
                 </SLink>

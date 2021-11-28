@@ -33,7 +33,7 @@ const About: NextPage = () => (
     <Head>
       <title>{SITE.NAME}</title>
     </Head>
-    <Container maxWidth="xl">
+    <Container maxWidth={false}>
       <Grid item xs={12}>
         <Box m={3}>
           <Typography variant="h6" gutterBottom>
@@ -65,7 +65,7 @@ const About: NextPage = () => (
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             {ROUTES.map((item) => (
-              <Grid item xs={4} key={item.href}>
+              <Grid item xs={12} lg={3} key={item.href}>
                 <SLink key={item.href} href={item.href}>
                   <Item elevation={3}>
                     <Box px={2}>{item.label}</Box>

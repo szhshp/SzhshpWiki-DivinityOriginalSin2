@@ -1,4 +1,5 @@
 export const ROUTES = [
+  { href: "/", label: "首页" },
   { href: "/recipes", label: "合成(按配方)" },
   { href: "/craftablesByIngredients", label: "合成(按材料)" },
   {
