@@ -10,6 +10,7 @@ import {
   RadioGroup,
   TextField,
 } from "@mui/material";
+import { TableRowDialog } from "./TableRowDialog";
 
 /* props includes rows and cols */
 export const DataTable = ({
@@ -23,9 +24,10 @@ export const DataTable = ({
   quickFilterField?: string;
   hideFooterPagination?: boolean;
 }): JSX.Element => {
-  /* use state for search */
   const [search, setSearch] = React.useState("");
   const [category, setCategory] = React.useState("");
+  const [open, setOpen] = React.useState(false);
+  const [modalData, setModalData] = React.useState({});
   const categroies = Array.from(
     new Set(
       rows.map((e) =>
@@ -37,8 +39,21 @@ export const DataTable = ({
   );
   const [pageSize, setPageSize] = React.useState<number>(20);
 
+  const columnMapping = columns.reduce((acc, cur) => {
+    acc[cur.field] = cur.headerName;
+    return acc;
+  }, {});
+
   return (
     <>
+      <TableRowDialog
+        open={open}
+        setOpen={setOpen}
+        data={Object.keys(modalData).reduce((acc, cur) => {
+          acc[columnMapping[cur]] = modalData[cur];
+          return acc;
+        }, {})}
+      />
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Box
@@ -100,34 +115,41 @@ export const DataTable = ({
           density="compact"
           disableColumnFilter
           disableColumnMenu
-          rows={rows
-            .map((e, i) => ({
-              ...e,
-              id: i,
-            }))
-            .filter((row) => {
-              if (category && category.length > 0) {
-                return row[quickFilterField] === category;
-              }
-              return true;
-            })
-            .filter((row) => {
-              if (search.length === 0) return true;
-              let found = false;
-              columns.forEach(({ field }) => {
-                if (
-                  row[field] &&
-                  row[field]
-                    .toString()
-                    .toLocaleLowerCase()
-                    .includes(search.toLocaleLowerCase())
-                ) {
-                  found = true;
+          onRowClick={(e) => {
+            setModalData(e.row);
+            setOpen(true);
+          }}
+          rows={
+            /* Apply filters */
+            rows
+              .map((e, i) => ({
+                ...e,
+                id: i,
+              }))
+              .filter((row) => {
+                if (category && category.length > 0) {
+                  return row[quickFilterField] === category;
                 }
-              });
+                return true;
+              })
+              .filter((row) => {
+                if (search.length === 0) return true;
+                let found = false;
+                columns.forEach(({ field }) => {
+                  if (
+                    row[field] &&
+                    row[field]
+                      .toString()
+                      .toLocaleLowerCase()
+                      .includes(search.toLocaleLowerCase())
+                  ) {
+                    found = true;
+                  }
+                });
 
-              return found;
-            })}
+                return found;
+              })
+          }
           columns={columns}
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}

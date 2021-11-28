@@ -53,7 +53,6 @@ const Home: NextPage = () => (
             "Result 2": e["Result 2"] ? `${e["Result 2"]}(${amt2})` : "",
             "Value 1": parseValue(e["Value 1"]),
             "Profit 1": parseValue(e["Profit 1"]),
-            id: i,
           };
         })}
         quickFilterField="Category"
