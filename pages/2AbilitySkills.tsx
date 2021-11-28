@@ -29,7 +29,11 @@ const Home: NextPage = () => (
       </Box>
       <DataTable
         columns={[
-          { field: "Non-Source", headerName: "技能", width: 200 },
+          {
+            field: "Non-Source",
+            headerName: "技能",
+            width: 200,
+          },
           ...columns,
         ]}
         rows={nonSourceAbilities.map((e, i) => ({
@@ -47,7 +51,11 @@ const Home: NextPage = () => (
       </Box>
       <DataTable
         columns={[
-          { field: "Source", headerName: "技能", width: 200 },
+          {
+            field: "Source",
+            headerName: "技能",
+            width: 200,
+          },
           ...columns,
         ]}
         rows={sourceAbilities.map((e, i) => ({

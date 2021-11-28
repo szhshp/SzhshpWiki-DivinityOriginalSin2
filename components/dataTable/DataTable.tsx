@@ -128,7 +128,7 @@ export const DataTable = ({
           columns={columns}
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-          rowsPerPageOptions={[5, 10, 20]}
+          rowsPerPageOptions={[20, 50, 100]}
           hideFooterPagination={hideFooterPagination || false}
         />
       </Box>
