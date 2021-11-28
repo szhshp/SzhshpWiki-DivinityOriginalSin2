@@ -12,7 +12,7 @@ import { recipes } from "data";
 const columns: GridColDef[] = [
   { field: "Result 1", headerName: "名称", width: 250 },
   { field: "Category", headerName: "类别", width: 150 },
-  { field: "Effect 1", headerName: "效果", width: 250 },
+  { field: "Effect 1", headerName: "效果", width: 500 },
   ...Array(5)
     .fill(undefined)
     .map((e, i) => ({

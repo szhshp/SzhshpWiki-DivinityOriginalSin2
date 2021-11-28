@@ -34,6 +34,9 @@ export const DataTable = ({
       </Box>
       <Box minHeight="100vh" width="100%">
         <DataGrid
+          density="compact"
+          disableColumnFilter
+          disableColumnMenu
           rows={rows
             .map((e, i) => ({
               ...e,
