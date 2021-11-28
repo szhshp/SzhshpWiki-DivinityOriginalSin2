@@ -26,7 +26,7 @@ const columns: GridColDef[] = [
     .map((e, i) => ({
       field: `Ingredient ${i + 1}`,
       headerName: `素材 ${i + 1}`,
-      flex:200
+      flex: 200,
     })),
 ];
 

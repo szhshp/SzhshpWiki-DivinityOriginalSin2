@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const baiduAnalyticID = "e9a8aa221ddd0ffadaf08ec797c90e8d";
+const baiduAnalyticID = "198d3ecdfabae684480217e13d378ae0";
 /**
  * @name attachBaiduAnalytic
  * @description Site Analytic for Baidu
