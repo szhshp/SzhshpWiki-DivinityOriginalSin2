@@ -16,7 +16,7 @@ import { ROUTES, SITE } from "config";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
 const ContentContainer = (): ReactElement => {
-  const [drawOpen, setDrawOpen] = useState(true);
+  const [drawOpen, setDrawOpen] = useState(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Drawer anchor="left" open={drawOpen} onClose={() => setDrawOpen(false)}>
