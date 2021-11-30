@@ -13,20 +13,20 @@ const columns: GridColDef[] = [
   {
     field: "Result 1",
     headerName: "产品 1",
-    flex: 250,
+    minWidth: 250,
     renderCell: ({ value }) => <b>{value}</b>,
   },
-  { field: "Profit 1", headerName: "利益值", flex: 150 },
-  { field: "Result 2", headerName: "产品 2", flex: 250 },
-  { field: "Category", headerName: "类别", flex: 150 },
-  { field: "Crafting Station", headerName: "合成台", flex: 150 },
-  { field: "Effect 1", headerName: "描述", flex: 500 },
+  { field: "Profit 1", headerName: "利益值", minWidth: 150 },
+  { field: "Result 2", headerName: "产品 2", minWidth: 250 },
+  { field: "Category", headerName: "类别", minWidth: 150 },
+  { field: "Crafting Station", headerName: "合成台", minWidth: 150 },
+  { field: "Effect 1", headerName: "描述", minWidth: 500 },
   ...Array(5)
     .fill(undefined)
     .map((e, i) => ({
       field: `Ingredient ${i + 1}`,
       headerName: `素材 ${i + 1}`,
-      flex: 200,
+      minWidth: 200,
     })),
 ];
 
