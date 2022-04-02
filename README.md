@@ -12,3 +12,6 @@ szhshp 的攻略 - 神界原罪 2 合成表攻略速查
 - 神界: 原罪 2 (Divinity: Original Sin 2) 
 - 神界: 原罪 2 决定版 (Divinity: Original Sin 2 Definitive Edition)
 - MOD: Crafting Overhaul Spreadsheet
+
+
+> 数据基于英文版 Wiki
