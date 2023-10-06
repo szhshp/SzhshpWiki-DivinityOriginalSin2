@@ -1,6 +1,6 @@
 # Szhshp Wiki - Divinity: Original Sin 2
 
-- [Site: game.dos2.szhshp.org](game.dos2.szhshp.org)
+- [Site: game-dos2.szhshp.org](game-dos2.szhshp.org)
 - [Backup](https://szhshp-game-dos2.vercel.app/)
 
 > 项目基于 [Project Titan](https://github.com/szhshp/NextJS-BlogTemplate-ProjectTitan)
